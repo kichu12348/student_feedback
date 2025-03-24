@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Feedback System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>FeedbackHub</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#feedback">Feedback</a></li>
+                    <li><a href="#admin">Admin</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="section active">
+            <div class="container">
+                <div class="hero">
+                    <h2>Your Opinion Matters</h2>
+                    <p>Help us improve your learning experience by sharing your feedback.</p>
+                    <a href="#feedback" class="btn primary" id="hero-btn">Give Feedback</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="feedback" class="section">
+            <div class="container">
+                <h2>Submit Feedback</h2>
+                <div class="form-container">
+                    <form id="feedbackForm">
+                        <div class="form-group">
+                            <label for="category">Category</label>
+                            <select id="category" required>
+                                <option value="" disabled selected>Select category</option>
+                                <option value="course">Course</option>
+                                <option value="professor">Professor</option>
+                                <option value="general">General</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="specific">Please specify</label>
+                            <input type="text" id="specific" placeholder="Course name or Professor name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Rating</label>
+                            <div class="star-rating">
+                                <i class="far fa-star" data-rating="1"></i>
+                                <i class="far fa-star" data-rating="2"></i>
+                                <i class="far fa-star" data-rating="3"></i>
+                                <i class="far fa-star" data-rating="4"></i>
+                                <i class="far fa-star" data-rating="5"></i>
+                                <input type="hidden" id="rating" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="feedback-text">Your Feedback</label>
+                            <textarea id="feedback-text" rows="5" placeholder="Please share your thoughts..." required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn primary">Submit Feedback</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <section id="admin" class="section">
+            <div class="container">
+                <h2>Admin Panel</h2>
+                <div class="filters">
+                    <select id="filter-category">
+                        <option value="all">All Categories</option>
+                        <option value="course">Course</option>
+                        <option value="professor">Professor</option>
+                        <option value="general">General</option>
+                    </select>
+                    <input type="text" id="search" placeholder="Search...">
+                </div>
+                <div class="feedback-cards" id="feedback-container">
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="container">
+                <h2>About Student Feedback System</h2>
+                <p>The Student Feedback System is designed to collect and analyze student opinions to improve the quality of education and services provided by our institution.</p>
+                <p>Your feedback helps us identify areas of improvement and make necessary changes to enhance your learning experience.</p>
+            </div>
+        </section>
+    </main>
+    <script src="index.js"></script>
+</body>
+</html>
